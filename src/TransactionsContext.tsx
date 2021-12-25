@@ -22,11 +22,9 @@ export const TransactionsProvider = ({ children }: TransactionsProviderProps) =>
     }
 
     const createTransaction = async (transactionInput: TransactionInput) => {
-        const result = await api.post('/transactions', transactionInput)
+        const result = await api.post('/transactions', { ...transactionInput, createdAt: new Date() });
         const { transaction } = result.data;
-        setTransactions([...transactions, {
-            ...transaction
-        }]);
+        setTransactions([...transactions, transaction]);
     }
 
     useEffect(() => {

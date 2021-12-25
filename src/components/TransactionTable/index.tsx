@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { TransactionsContext } from '../../TransactionsContext'
 import { Container } from './styles'
 import { TransactionCategories } from '../../types/Transaction'
+import { DateFormat } from '../../helpers/DateFormat'
 
 export const TransactionTable = () => {
 
@@ -25,7 +26,7 @@ export const TransactionTable = () => {
                                 <td>{item.title}</td>
                                 <td className={item.type}>{item.amount}</td>
                                 <td>{TransactionCategories[item.category].title}</td>
-                                <td>{item.createdAt}</td>
+                                <td>{DateFormat.toBrazilian(item.createdAt)}</td>
                             </tr>
                         );
                     })}
