@@ -3,13 +3,12 @@ import outcomeSVG from './../../assets/outcome.svg'
 import totalSVG from './../../assets/total.svg'
 import { BoxMovement } from '../BoxMovement'
 import { Container } from './styles'
-import { useContext, useEffect } from 'react'
-import { TransactionsContext } from '../../TransactionsContext'
 import { TransactionTypes } from '../../types/Transaction'
+import { useTransactions } from '../../hooks/useTransactions'
 
 export const Summary = () => {
 
-  const { transactions } = useContext(TransactionsContext)
+  const { transactions } = useTransactions();
 
   const totals = transactions.reduce((accumulator, transaction) => {
     if (TransactionTypes.DEPOSIT === transaction.type) {

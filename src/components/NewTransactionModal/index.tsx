@@ -1,7 +1,7 @@
-import { FormEvent, useContext, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Modal from 'react-modal'
+import { useTransactions } from '../../hooks/useTransactions'
 import { api } from '../../services/api'
-import { TransactionsContext } from '../../TransactionsContext'
 import { Transaction, TransactionInput, TransactionCategories } from '../../types/Transaction'
 import { ModalMessage } from '../ModalMessage'
 import CloseSVG from './../../assets/close.svg'
@@ -24,7 +24,7 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
     const [transactionCategory, setTransactionCategory] = useState('')
     const [transactionModalAlert, setTransactionModalAlert] = useState('')
     const [transactionType, setTransactionType] = useState('deposit')
-    const { createTransaction } = useContext(TransactionsContext)
+    const { createTransaction } = useTransactions()
 
     const handleCreateNewTransaction = async (event: FormEvent) => {
 

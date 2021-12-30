@@ -5,7 +5,7 @@ import { createServer, Model } from 'miragejs'
 import { useState } from 'react'
 import { NewTransactionModal } from './components/NewTransactionModal'
 import Modal from 'react-modal'
-import { TransactionsProvider } from "./TransactionsContext";
+import { TransactionsProvider } from "./hooks/useTransactions";
 
 // cria api de fornecimento de mock's com miragejs
 createServer({
