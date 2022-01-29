@@ -24,4 +24,4 @@ yarn start
 
 ### Preview
 
-- under construction
+<a href="https://www.criarbanner.com.br" title="criar banner" target="_blank"><img src="https://www.criarbanner.com.br/criargifs/a/1a4cb7cc576076c3b8d58aee632ce74c.gif" width="400" height="209.978768577" border="0" /></a><br /><a href="https://www.criarbanner.com.br/logotipo/" title="criar logotipo" target="_blank">criador de giphy online</a>
