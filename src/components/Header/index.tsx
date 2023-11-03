@@ -1,4 +1,5 @@
-import logoSVG from './../../assets/logo.svg'
+
+import { Logo } from '../Logo';
 import { Container, Content } from './styles'
 
 type HeaderProps = {
@@ -9,7 +10,7 @@ export const Header = ({ onOpenNewTransactionModal }: HeaderProps) => {
     return (
         <Container>
             <Content>
-                <img src={logoSVG} alt="dt money" />
+                <Logo />
                 <button type="button" onClick={onOpenNewTransactionModal}>
                     Nova Transação
                 </button>
