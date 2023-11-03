@@ -22,7 +22,6 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
     const [transactionTitle, setTransactionTitle] = useState('')
     const [transactionValue, setTransactionValue] = useState(0)
     const [transactionCategory, setTransactionCategory] = useState('')
-    const [transactionModalAlert, setTransactionModalAlert] = useState('')
     const [transactionType, setTransactionType] = useState('deposit')
     const { createTransaction } = useTransactions()
 
@@ -37,20 +36,6 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
             type: transactionType === 'deposit' ? 'deposit' : 'withdraw',
             category: transactionCategory ? TransactionCategories[transactionCategory].key : ''
         }
-
-        // const { isValid, invalidEntries } = isTransactionValid(newTransaction)
-
-        // if (!isValid) {
-        //     const tr = `
-        //     <h4>Campos Obrigatórios</h4>
-        //     <ul>
-        //         ${invalidEntries.map(ie => `<li>${ie}</li>`)}
-        //     </ul>
-        //     `
-
-        //     setTransactionModalAlert(tr)
-        //     return;
-        // }
 
         await createTransaction(newTransaction);
 
